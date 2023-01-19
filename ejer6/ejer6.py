@@ -16,6 +16,7 @@ class Stormtrooper:
     def __str__(self):
         return '\nNombre: ' + self.name + '\nRango: ' + str(self.rango)
     
+    hashtresdigitos = {}
     lista = ["FL","TF","TK","CT","FN","FO"]
     for i in range(2000):
         numRandom = random.randint(0,5)
@@ -24,6 +25,12 @@ class Stormtrooper:
             listanum.append(random.randint(0,9))
 
         num = "".join(listanum)
+        tresdigitos ="".join(listanum[1:])
         codlegion = lista[numRandom]
         Stormtrooper = Stormtrooper(codlegion + "-" + num, 7)
-        print(Stormtrooper)
+        if hashtresdigitos.get(tresdigitos):
+            hashtresdigitos[tresdigitos][codlegion] = Stormtrooper
+        else:
+            hashtresdigitos[tresdigitos] = {}
+            hashtresdigitos[tresdigitos][codlegion] = Stormtrooper
+            
