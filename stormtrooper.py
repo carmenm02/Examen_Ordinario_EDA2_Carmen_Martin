@@ -21,7 +21,7 @@ class Stormtrooper(Enum):
         e = None
         for i in TipoStrom:
             if legion == i.name:
-                a = i.value.split("_")
+                a = i.value.split("-")
                 e = Stormtrooper(a[0],a[1].append(0),a[1].append(1),a[1].append(2),a[1].append(3))
                 break
         if type(e) != Stormtrooper:
