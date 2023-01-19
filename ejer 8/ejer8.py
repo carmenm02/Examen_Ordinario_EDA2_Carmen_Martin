@@ -22,3 +22,11 @@ g.add_node('Jedha')
 g.add_node('Corellia')
 g.add_node('Coruscant')
 
+for node in g.nodes():
+    for i in range(4):
+        other_node = random.choice(list(g.nodes()))
+        while other_node == node:
+            other_node = random.choice(list(g.nodes()))
+        weight = random.randint(1, 10)
+        g.add_edge(node, other_node, weight=weight)
+
