@@ -58,4 +58,16 @@ class NodoArbol:
                 nodo = nodo.padre
             codigo = codigo[::-1]
         return codigo
+    def decodificar(raiz,codigo):
+        mensaje = []
+        nodo = raiz
+        for c in codigo:
+            if c == 0:
+                nodo = nodo.izquierda
+            else:
+                nodo = nodo.derecha
+            if nodo.simbolo != 'XX':
+                mensaje.append(nodo.simbolo)
+                nodo = raiz
+        return mensaje
     
