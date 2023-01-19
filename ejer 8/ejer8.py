@@ -30,3 +30,15 @@ for node in g.nodes():
         weight = random.randint(1, 10)
         g.add_edge(node, other_node, weight=weight)
 
+t = nx.minimum_spanning_tree(g)
+
+dist1 = nx.shortest_path_length(t, 'Tatoine', 'Endor')
+dist2 = nx.shortest_path_length(t, 'Tatoine', 'Dagobah')
+dist3 = nx.shortest_path_length(t, 'Tatoine', 'Hoth')
+
+print(dist1)
+print(dist2)
+print(dist3)
+
+neighbors = list(t.neighbors('Tatoine'))
+print(neighbors)
