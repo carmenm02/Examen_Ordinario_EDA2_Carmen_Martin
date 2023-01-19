@@ -1,12 +1,30 @@
-class Stormtrooper:      
-    def __init__(self,name,rango) :
+from enum import Enum
+class TipoStrom(Enum):
+    FL = 0
+    TF = 1
+    TK = 2
+    CT = 3
+    FN = 4
+    FO = 5
+class Stormtrooper(Enum):      
+    def __init__(self,name,rango,x,y,z,t) :
         self.name = name
         self.rango = rango
-        print("Stormtrooper creado con éxito")
+        self.identificador_cohoerte = x
+        self.identificador_siglo = y
+        self.identificador_escuadra = z
+        self.numero_trooper = t
 
-    def calificacion(self):
-        rangos = {"cadete": 1, "cabo": 2, "sargento": 3, "teniente": 4, "capitan": 5}
-        if self.rango in rangos:
-            return rangos[self.rango]
-        else:
-            return "Rango desconocido"
+        print("Stormtrooper creado con éxito")
+    def calificacion(self,a):
+        legion = a.lower()
+        e = None
+        for i in TipoStrom:
+            if legion == i.name:
+                a = i.value.split("_")
+                e = Stormtrooper(a[0],a[1].append(0),a[1].append(1),a[1].append(2),a[1].append(3))
+                break
+        if type(e) != Stormtrooper:
+            print("Legion no encontrada")
+        return e
+        
