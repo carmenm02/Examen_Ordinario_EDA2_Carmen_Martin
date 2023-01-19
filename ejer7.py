@@ -45,3 +45,17 @@ class NodoArbol:
         elif p is None:
             p = buscar(raiz.derecha,clave)
         return p
+    def codificar(raiz,mensaje):
+        codigo = []
+        mensaje = mensaje[::-1]
+        for m in mensaje:
+            nodo = buscar(raiz,m)
+            while nodo.padre is not None:
+                if nodo.padre.izquierda == nodo:
+                    codigo.append(0)
+                else:
+                    codigo.append(1)
+                nodo = nodo.padre
+            codigo = codigo[::-1]
+        return codigo
+    
