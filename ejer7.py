@@ -35,3 +35,13 @@ class NodoArbol:
             nodos.pop(0)
             nodos.pop(1)
             return nodos[0]
+    def buscar(raiz,clave):
+        p = 0
+        if raiz.simbolo == clave:
+            p = raiz
+            return p
+        elif p is None:
+            p = buscar(raiz.izquierda,clave)
+        elif p is None:
+            p = buscar(raiz.derecha,clave)
+        return p
