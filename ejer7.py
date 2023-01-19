@@ -19,3 +19,19 @@ class NodoArbol:
                 lista_nodos.append(nodo)
                 break
         return lista_nodos
+    
+    def crear_arbol(simbolos,frecuencias):
+        nodos = []
+        for i in range(len(simbolos)):
+            nodos.append(NodoArbol(simbolos[i],frecuencias[i]))
+        nodos = NodoArbol.ordenar_nodos(nodos)
+        while len(nodos) > 1:
+            nodo = NodoArbol('XX',nodos[0].freq+nodos[1].freq)')
+            nodo.izquierda = nodos[0]
+            nodo.izquierda.padre = nodo
+            nodo.derecha = nodos[1]
+            nodo.derecha.padre = nodo
+            nodos = insertar_nodo(nodos,nodo)
+            nodos.pop(0)
+            nodos.pop(1)
+            return nodos[0]
