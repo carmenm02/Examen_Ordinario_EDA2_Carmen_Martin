@@ -52,4 +52,16 @@ class Stormtrooper:
         print(misionDesalto)
         print("Mision explorar")
         print(misionExplorar)
-        
+
+        mExplorar = []
+        mExterminar = []
+        for i in hashtresdigitos.keys():
+            for j in hashtresdigitos(i).keys():
+                if j == "CT":
+                    mExplorar.append(hashtresdigitos(i)(j))
+                elif j == "TF":
+                    mExterminar.append(hashtresdigitos(i)(j))
+        print("Explorar")
+        print(mExplorar)
+        print("Exterminar")
+        print(mExterminar)
