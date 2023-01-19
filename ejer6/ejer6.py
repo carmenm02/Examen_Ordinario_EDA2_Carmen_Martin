@@ -33,4 +33,23 @@ class Stormtrooper:
         else:
             hashtresdigitos[tresdigitos] = {}
             hashtresdigitos[tresdigitos][codlegion] = Stormtrooper
-            
+        
+        s = Stormtrooper("FN-2187",7)
+        hashtresdigitos['187']['FN'] = s
+        if hashtresdigitos.get('187').get('FN').nombre == "FN-2187":
+            print("Eliminado FN-2187")
+        
+        misionDesalto = []
+        misionExplorar = []
+
+        if (hashtresdigitos('781')):
+            for i in hashtresdigitos('781'.keys():
+                misionDesalto.append(i)
+        if (hashtresdigitos('537')):
+            for i in hashtresdigitos('537'.keys():
+                misionExplorar.append(i)
+        print("Mision desalto")
+        print(misionDesalto)
+        print("Mision explorar")
+        print(misionExplorar)
+        
