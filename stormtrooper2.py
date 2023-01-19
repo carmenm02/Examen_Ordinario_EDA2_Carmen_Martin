@@ -27,7 +27,12 @@ class Stormtrooper(Enum):
         if type(e) != Stormtrooper:
             print("Legion no encontrada")
         return e
+    def __str__(self):
+        return '\nNombre: ' + self.name + '\nRango: ' + self.rango + '\nIdentificador Cohorte: ' + self.identificador_cohoerte + '\nIdentificador Siglo: ' + self.identificador_siglo + '\nIdentificador Escuadra: ' + self.identificador_escuadra + '\nNumero de Trooper: ' + self.numero_trooper
+    
 
 stormtrooper_lista = [Stormtrooper("AK-3654",7),Stormtrooper("LF-2564",7),Stormtrooper("TK-8154",7),Stormtrooper("TL-8654",7)]
 for stormtrooper in stormtrooper_lista:
     stormtrooper.calificacion()
+
+ 
